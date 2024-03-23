@@ -17,3 +17,5 @@ Carousel / Slider - built using vanilla javascript. Library is framework indepen
 - Fully accessible with arrow key navigation.
 - Add, remove, filter & unfilter slides.
 - Autoplay, dots, arrows, callbacks, etc...
+
+https://www.buymeacoffee.com/ashiishpann
