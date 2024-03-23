@@ -237,7 +237,7 @@ class APSlider extends HTMLElement {
 
     basicStyleAppender = () => {
         const styleTemplate = document.createElement('style');
-        styleTemplate.id = 'slider-styles';
+        styleTemplate.id = 'apslider-styles';
         styleTemplate.innerHTML = `
             /* Slider */
             @keyframes l23 {
