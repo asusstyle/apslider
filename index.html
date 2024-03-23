@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>APSlider Documentation</title>
+	<link rel="stylesheet" href="./apslider.css">
+	<link rel="stylesheet" href="./prism.css">
+</head>
+<body>
+	<div class="main-content">
+		<h1>Features &amp; Benefits</h1>
+		<div class="features">
+			<ul>
+				<li>Vanilla Javascript based carousel/ slider.</li>
+				<li>Uses Javascript ES6 version based Web Component structure.</li>
+				<li>Superfast performance, no third-party framework needed.</li>
+				<li>Framework independent, use with any framework (react, angular, etc...).</li>
+				<li>Very easy to integrate in any framework.</li>
+				<li>Fully responsive. Scales with its container.</li>
+				<li>Separate settings per breakpoint.</li>
+				<li>Uses CSS3. Fully functional.</li>
+				<li>Swipe enabled. Or disabled, if you prefer.</li>
+				<li>Desktop mouse dragging.</li>
+				<li>Infinite looping.</li>
+				<li>Fully accessible with arrow key navigation.</li>
+				<li>Add, remove, filter & unfilter slides.</li>
+				<li>Autoplay, dots, arrows, callbacks, etc...</li>
+			</ul>
+		</div>
+		
+		<h2>Single Item</h2>
+		<ap-slider>
+			<p>1</p>
+			<p>2</p>
+			<p>3</p>
+			<p>4</p>
+		</ap-slider>
+		<pre class="code-display"><code class="language-markup">
+		&lt;ap-slider>
+			&lt;p>1&lt;/p>
+			&lt;p>2&lt;/p>
+			&lt;p>3&lt;/p>
+			&lt;p>4&lt;/p>
+		&lt;/ap-slider>
+		</code></pre>
+
+		<hr class="hr-line">
+
+		<h2>Multiple Item</h2>
+		<ap-slider data-apslider='{"draggable": true, "infinite": true, "slidesToShow": 3, "slidesToScroll": 3}'>
+			<p>1</p>
+			<p>2</p>
+			<p>3</p>
+			<p>4</p>
+			<p>5</p>
+			<p>6</p>
+			<p>7</p>
+			<p>8</p>
+			<p>9</p>
+		</ap-slider>
+		<pre class="code-display"><code class="language-markup">
+		&lt;ap-slider data-apslider='{"draggable": true, "infinite": true, "slidesToShow": 3, "slidesToScroll": 3}'>
+			&lt;p>1&lt;/p>
+			&lt;p>2&lt;/p>
+			&lt;p>3&lt;/p>
+			&lt;p>4&lt;/p>
+			&lt;p>5&lt;/p>
+			&lt;p>6&lt;/p>
+			&lt;p>7&lt;/p>
+			&lt;p>8&lt;/p>
+			&lt;p>9&lt;/p>
+		&lt;/ap-slider>
+		</code></pre>
+
+		<hr class="hr-line">
+
+		<h2>Rsponsive Display</h2>
+		<ap-slider data-apslider='{"speed": 300, "slidesToShow": 4, "slidesToScroll": 4, "responsive": [{ "breakpoint": 1024, "settings": { "slidesToShow": 3, "slidesToScroll": 3, "infinite": true } }, { "breakpoint": 600, "settings": { "slidesToShow": 2, "slidesToScroll": 2 } }, { "breakpoint": 480, "settings": { "slidesToShow": 1, "slidesToScroll": 1 } } ]}'>
+			<p>1</p>
+			<p>2</p>
+			<p>3</p>
+			<p>4</p>
+			<p>5</p>
+			<p>6</p>
+			<p>7</p>
+			<p>8</p>
+		</ap-slider>
+		<pre class="code-display"><code class="language-markup">
+		&lt;!-- 
+		You can destroy/init apslider at a given breakpoint by adding:
+		settings: "destroyed"
+		instead of a settings object
+		--&gt;
+		&lt;ap-slider
+			data-apslider='{
+				"speed": 300,
+				"slidesToShow": 4,
+				"slidesToScroll": 4,
+				"responsive": [{
+					"breakpoint": 1024,
+					"settings": {
+						"slidesToShow": 3,
+						"slidesToScroll": 3,
+						"infinite": true
+					}
+				},
+				{
+					"breakpoint": 600,
+					"settings": {
+						"slidesToShow": 2,
+						"slidesToScroll": 2
+					}
+				},
+				{
+					"breakpoint": 480,
+					"settings": {
+						"slidesToShow": 1,
+						"slidesToScroll": 1
+					}
+				}]
+			}'>
+			&lt;p>1&lt;/p>
+			&lt;p>2&lt;/p>
+			&lt;p>3&lt;/p>
+			&lt;p>4&lt;/p>
+			&lt;p>5&lt;/p>
+			&lt;p>6&lt;/p>
+			&lt;p>7&lt;/p>
+			&lt;p>8&lt;/p>
+		&lt;/ap-slider>
+		</code></pre>
+
+		<hr class="hr-line">
+
+		<h2>Variable Width</h2>
+		<ap-slider class="variable-width" data-apslider='{"dots": true, "infinite": true, "speed": 300, "slidesToShow": 1, "centerMode": true, "variableWidth": true}'>
+			<div style="width: 200px;">
+				<p>200</p>
+			</div>
+			<div style="width: 175px;">
+				<p>175</p>
+			</div>
+			<div style="width: 150px;">
+				<p>150</p>
+			</div>
+			<div style="width: 300px;">
+				<p>300</p>
+			</div>
+			<div style="width: 225px;">
+				<p>225</p>
+			</div>
+			<div style="width: 125px;">
+				<p>125</p>
+			</div>
+		</ap-slider>
+		<pre class="code-display"><code class="language-markup">
+		&lt;ap-slider
+			data-apslider='{"dots": true, "infinite": true, "speed": 300, "slidesToShow": 1, "centerMode": true, "variableWidth": true}'>
+			&lt;div style="width: 200px;">
+				&lt;p>200&lt;/p>
+			&lt;/div>
+			&lt;div style="width: 200px;">
+				&lt;p>175&lt;/p>
+			&lt;/div>
+			&lt;div style="width: 200px;">
+				&lt;p>150&lt;/p>
+			&lt;/div>
+			&lt;div style="width: 200px;">
+				&lt;p>300&lt;/p>
+			&lt;/div>
+			&lt;div style="width: 200px;">
+				&lt;p>225&lt;/p>
+			&lt;/div>
+			&lt;div style="width: 200px;">
+				&lt;p>125&lt;/p>
+			&lt;/div>
+		&lt;/ap-slider>
+		</code></pre>
+
+		<hr class="hr-line">
+
+		<h2>Adaptive Height</h2>
+		<ap-slider data-apslider='{"dots": true, "infinite": true, "speed": 300, "slidesToShow": 1, "adaptiveHeight": true}'>
+			<div>
+				<h3>1</h3>
+			</div>
+			<div>
+				<h3>2</h3>
+				<p>Look ma!</p>
+			</div>
+			<div>
+				<h3>3</h3>
+				<p>Check
+					<br />this out!
+				</p>
+			</div>
+			<div>
+				<h3>4</h3>
+				<p>Woo!</p>
+			</div>
+		</ap-slider>
+		<pre class="code-display"><code class="language-markup">
+		&lt;ap-slider
+			data-apslider='{"dots": true, "infinite": true, "speed": 300, "slidesToShow": 1, "adaptiveHeight": true}'>
+			&lt;div>
+				&lt;h3>1&lt;/h3>
+			&lt;/div>
+			&lt;div>
+				&lt;h3>2&lt;/h3>
+				&lt;p>Look ma!&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;h3>3&lt;/h3>
+				&lt;p>Check
+					&lt;br />this out!
+				&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;h3>4&lt;/h3>
+				&lt;p>Woo!&lt;/p>
+			&lt;/div>
+		&lt;/ap-slider>
+		</code></pre>
+
+		<hr class="hr-line">
+
+		<h2>Settings Options w/Javascript</h2>
+		<ap-slider class="settings-from-js">
+			<p>1</p>
+			<p>2</p>
+			<p>3</p>
+			<p>4</p>
+			<p>5</p>
+			<p>6</p>
+			<p>7</p>
+			<p>8</p>
+			<p>9</p>
+		</ap-slider>
+		<pre class="code-display"><code class="language-markup">
+		&lt;!-- HTML Structure --&gt;
+		&lt;ap-slider class="settings-from-js">
+			&lt;p>1&lt;/p>
+			&lt;p>2&lt;/p>
+			&lt;p>3&lt;/p>
+			&lt;p>4&lt;/p>
+			&lt;p>5&lt;/p>
+			&lt;p>6&lt;/p>
+			&lt;p>7&lt;/p>
+			&lt;p>8&lt;/p>
+			&lt;p>9&lt;/p>
+		&lt;/ap-slider>
+		</code></pre>
+		<pre class="code-display"><code class="language-js">
+		/* Javscript Settings */
+		const carouselElement = document.querySelector('.settings-from-js');
+		
+		carouselElement.settings = {
+			slidesToShow: 4,
+			slidesToScroll: 4
+		}
+
+		carouselElement.reinit(true);
+		</code></pre>
+
+		<hr class="hr-line">
+
+		<h2>Center Mode</h2>
+		<ap-slider data-apslider='{"infinite": true, "centerMode": true, "slidesToShow": 3}'>
+			<p>1</p>
+			<p>2</p>
+			<p>3</p>
+			<p>4</p>
+			<p>5</p>
+			<p>6</p>
+			<p>7</p>
+			<p>8</p>
+			<p>9</p>
+		</ap-slider>
+		<pre class="code-display"><code class="language-markup">
+		&lt;ap-slider data-apslider='{"infinite": true, "centerMode": true, "slidesToShow": 3}'>
+			&lt;p>1&lt;/p>
+			&lt;p>2&lt;/p>
+			&lt;p>3&lt;/p>
+			&lt;p>4&lt;/p>
+			&lt;p>5&lt;/p>
+			&lt;p>6&lt;/p>
+			&lt;p>7&lt;/p>
+			&lt;p>8&lt;/p>
+			&lt;p>9&lt;/p>
+		&lt;/ap-slider>
+		</code></pre>
+
+		<hr class="hr-line">
+
+		<h2>Lazy Loading</h2>
+		<ap-slider data-apslider='{"lazyLoad": "ondemand", "slidesToScroll": 2, "slidesToShow": 2}'>
+			<div><img data-lazy="https://picsum.photos/200/100?random=1"></div>
+			<div><img data-lazy="https://picsum.photos/200/100?random=2"></div>
+			<div><img data-lazy="https://picsum.photos/200/100?random=3"></div>
+			<div><img data-lazy="https://picsum.photos/200/100?random=4"></div>
+			<div><img data-lazy="https://picsum.photos/200/100?random=5"></div>
+			<div><img data-lazy="https://picsum.photos/200/100?random=6"></div>
+			<div><img data-lazy="https://picsum.photos/200/100?random=7"></div>
+			<div><img data-lazy="https://picsum.photos/200/100?random=8"></div>
+			<div><img data-lazy="https://picsum.photos/200/100?random=9"></div>
+		</ap-slider>
+		<pre class="code-display"><code class="language-markup">
+		&lt;ap-slider data-apslider='{"lazyLoad": "ondemand", "slidesToScroll": 2, "slidesToShow": 2}'>
+			&lt;div>&lt;img data-lazy="https://picsum.photos/200/100?random=1">&lt;/div>
+			&lt;div>&lt;img data-lazy="https://picsum.photos/200/100?random=2">&lt;/div>
+			&lt;div>&lt;img data-lazy="https://picsum.photos/200/100?random=3">&lt;/div>
+			&lt;div>&lt;img data-lazy="https://picsum.photos/200/100?random=4">&lt;/div>
+			&lt;div>&lt;img data-lazy="https://picsum.photos/200/100?random=5">&lt;/div>
+			&lt;div>&lt;img data-lazy="https://picsum.photos/200/100?random=6">&lt;/div>
+			&lt;div>&lt;img data-lazy="https://picsum.photos/200/100?random=7">&lt;/div>
+			&lt;div>&lt;img data-lazy="https://picsum.photos/200/100?random=8">&lt;/div>
+			&lt;div>&lt;img data-lazy="https://picsum.photos/200/100?random=9">&lt;/div>
+		&lt;/ap-slider>
+		</code></pre>
+
+		<hr class="hr-line">
+
+		<h2>Autoplay</h2>
+		<ap-slider data-apslider='{"autoplay": true, "autoplaySpeed": 2000, "slidesToScroll": 1, "slidesToShow": 3}'>
+			<p>1</p>
+			<p>2</p>
+			<p>3</p>
+			<p>4</p>
+			<p>5</p>
+			<p>6</p>
+			<p>7</p>
+			<p>8</p>
+			<p>9</p>
+		</ap-slider>
+		<pre class="code-display"><code class="language-markup">
+		&lt;ap-slider data-apslider='{"autoplay": true, "autoplaySpeed": 2000, "slidesToScroll": 1, "slidesToShow": 3}'>
+			&lt;p>1&lt;/p>
+			&lt;p>2&lt;/p>
+			&lt;p>3&lt;/p>
+			&lt;p>4&lt;/p>
+			&lt;p>5&lt;/p>
+			&lt;p>6&lt;/p>
+			&lt;p>7&lt;/p>
+			&lt;p>8&lt;/p>
+			&lt;p>9&lt;/p>
+		&lt;/ap-slider>
+		</code></pre>
+
+		<hr class="hr-line">
+
+		<h2>Fade</h2>
+		<ap-slider data-apslider='{"infinite": true, "speed": 500, "fade": true, "cssEase": "linear"}'>
+			<div><img src="https://picsum.photos/200/100?random=1"></div>
+			<div><img src="https://picsum.photos/200/100?random=2"></div>
+			<div><img src="https://picsum.photos/200/100?random=3"></div>
+			<div><img src="https://picsum.photos/200/100?random=4"></div>
+			<div><img src="https://picsum.photos/200/100?random=5"></div>
+		</ap-slider>
+		<pre class="code-display"><code class="language-markup">
+		&lt;ap-slider data-apslider='{"infinite": true, "speed": 500, "fade": true, "cssEase": "linear"}'>
+			&lt;div>&lt;img src="https://picsum.photos/200/100?random=1">&lt;/div>
+			&lt;div>&lt;img src="https://picsum.photos/200/100?random=2">&lt;/div>
+			&lt;div>&lt;img src="https://picsum.photos/200/100?random=3">&lt;/div>
+			&lt;div>&lt;img src="https://picsum.photos/200/100?random=4">&lt;/div>
+			&lt;div>&lt;img src="https://picsum.photos/200/100?random=5">&lt;/div>
+		&lt;/ap-slider>
+		</code></pre>
+
+		<hr class="hr-line">
+
+		<h2>Add &amp; Remove Slide</h2>
+		<ap-slider class="add-remove" data-apslider='{"slidesToScroll": 1, "slidesToShow": 1}'>
+			<p>1</p>
+		</ap-slider>
+
+		<button class="add">Add slide</button>
+		<button class="remove">Remove slide</button>
+		<pre class="code-display"><code class="language-js">
+		const carouselAddRemove = document.querySelector('.add-remove');
+		const buttons = document.querySelectorAll('button');
+	
+		let slideIndex = 1;
+		buttons.forEach(button => {
+			button.addEventListener('click', (e) => {
+				if (e.target.classList.contains('add')) {
+					slideIndex++;
+					const el = document.createElement('p');
+					el.innerText = slideIndex;
+					carouselAddRemove.addSlide(el);
+				}
+				if (e.target.classList.contains('remove')) {
+					carouselAddRemove.removeSlide(slideIndex - 1);
+					if (slideIndex !== 0) slideIndex--;
+				}
+			});
+		});
+		</code></pre>
+
+		<hr class="hr-line">
+
+		<h2>Filtering</h2>
+		<ap-slider class="js-filter" data-apslider='{"infinite": true, "slidesToScroll": 3, "slidesToShow": 3}'>
+			<p>1</p>
+			<p>2</p>
+			<p>3</p>
+			<p>4</p>
+			<p>5</p>
+			<p>6</p>
+			<p>7</p>
+			<p>8</p>
+			<p>9</p>
+		</ap-slider>
+		<button class="filter">Filter Slides</button>
+		<button class="unfilter">Unfilter Slides</button>
+		<pre class="code-display"><code class="language-js">
+		const carouselFilter = document.querySelector('.js-filter');
+		const buttons = document.querySelectorAll('button');
+	
+		buttons.forEach(button => {
+			button.addEventListener('click', (e) => {
+				if (e.target.classList.contains('filter')) {
+					carouselFilter.filterSlides(':odd');
+				}
+				if (e.target.classList.contains('unfilter')) {
+					carouselFilter.unFilterSlides();
+				}
+			});
+		});
+		</code></pre>
+
+		<hr class="hr-line">
+
+		<h2>Destroy</h2>
+		<ap-slider class="destroy-init" data-no-init="true">
+			<p>1</p>
+			<p>2</p>
+			<p>3</p>
+		</ap-slider>
+		<button class="init">Initialize</button>
+		<button class="destroy">Destroy</button>
+		<pre class="code-display"><code class="language-markup">
+		&lt;ap-slider class="destroy-init" data-no-init="true">
+			&lt;p>1&lt;/p>
+			&lt;p>2&lt;/p>
+			&lt;p>3&lt;/p>
+		&lt;/ap-slider>
+		</code></pre>
+		<pre class="code-display"><code class="language-js">
+		const carouselReInit = document.querySelector('.destroy-init');
+		const buttons = document.querySelectorAll('button');
+
+		buttons.forEach(button => {
+			button.addEventListener('click', (e) => {
+				if (e.target.classList.contains('init')) {
+					carouselReInit.init();
+				}
+				if (e.target.classList.contains('destroy')) {
+					carouselReInit.destroy(true);
+				}
+			});
+		});
+		</code></pre>
+
+		<hr class="hr-line">
+
+		<h2>Slider Syncing</h2>
+		<ap-slider class="syncing slider-for" data-apslider='{"slidesToShow": 1, "slidesToScroll": 1, "arrows": false, "fade": true, "asNavFor": ".slider-nav"}'>
+			<p>1</p>
+			<p>2</p>
+			<p>3</p>
+			<p>4</p>
+			<p>5</p>
+		</ap-slider>
+		<ap-slider class="syncing slider-nav" data-apslider='{"infinite": true, "slidesToShow": 3,  "slidesToScroll": 1, "asNavFor": ".slider-for", "dots": true, "centerMode": true, "focusOnSelect": true}'>
+			<p>1</p>
+			<p>2</p>
+			<p>3</p>
+			<p>4</p>
+			<p>5</p>
+		</ap-slider>
+		<pre class="code-display"><code class="language-markup">
+		&lt;ap-slider class="syncing slider-for" data-apslider='{"slidesToShow": 1, "slidesToScroll": 1, "arrows": false, "fade": true, "asNavFor": ".slider-nav"}'>
+			&lt;p>1&lt;/p>
+			&lt;p>2&lt;/p>
+			&lt;p>3&lt;/p>
+			&lt;p>4&lt;/p>
+			&lt;p>5&lt;/p>
+		&lt;/ap-slider>
+		&lt;ap-slider class="syncing slider-nav" data-apslider='{"infinite": true, "slidesToShow": 3,  "slidesToScroll": 1, "asNavFor": ".slider-for", "dots": true, "centerMode": true, "focusOnSelect": true}'>
+			&lt;p>1&lt;/p>
+			&lt;p>2&lt;/p>
+			&lt;p>3&lt;/p>
+			&lt;p>4&lt;/p>
+			&lt;p>5&lt;/p>
+		&lt;/ap-slider>
+		</code></pre>
+
+		<hr class="hr-line">
+
+		<h2>Right to Left</h2>
+		<ap-slider dir="rtl" data-apslider='{"rtl": true}'>
+			<p>1</p>
+			<p>2</p>
+			<p>3</p>
+			<p>4</p>
+			<p>5</p>
+		</ap-slider>
+		<pre class="code-display"><code class="language-markup">
+		&lt;ap-slider dir="rtl" data-apslider='{"rtl": true}'>
+			&lt;p>1&lt;/p>
+			&lt;p>2&lt;/p>
+			&lt;p>3&lt;/p>
+			&lt;p>4&lt;/p>
+			&lt;p>5&lt;/p>
+		&lt;/ap-slider>
+		</code></pre>
+		<p class="note"><strong>Note:</strong> the HTML tag or the parent of the slider must have the attribute "dir" set to "rtl".</p>
+
+		<hr class="hr-line">
+
+		<!-- <p class="lot-more">and a whole lot more...</p>
+
+		<hr class="hr-line">-->
+
+		<h2>Getting Started</h2>
+		<p>Set up your HTML markup.</p>
+		<pre class="code-display"><code class="language-markup">
+		&lt;ap-slider class="YOUR_CLASS">
+			&lt;p>1&lt;/p>
+			&lt;p>2&lt;/p>
+			&lt;p>3&lt;/p>
+			&lt;p>4&lt;/p>
+			&lt;p>5&lt;/p>
+		&lt;/ap-slider>
+		</code></pre>
+		<p>Move the /uc-caousel folder into your project</p>
+
+		<hr class="hr-line">
+
+		<p>No need to add `css` files as it will add automatically in your <code class="language-markup">&lt;head /&gt;</code></p>
+
+		<hr class="hr-line">
+
+		<p>Add <code class="language-markup">apslider.js</code> before your closing <code class="language-markup">&lt;body /&gt;</code> tag</p>
+		<pre class="code-display"><code class="language-markup">
+		&lt;script type="text/javascript" src="./apslider/apslider.min.js">&lt;/script>
+		</code></pre>
+
+		<hr class="hr-line">
+
+		<p>When complete, your HTML should look something like:</p>
+
+		<pre class="code-display"><code class="language-markup">
+		&lt;html>
+		&lt;head>
+			&lt;title>Javascript Carousel&lt;/title>
+		&lt;/head>
+		
+		&lt;body>
+			&lt;ap-slider class="your-class">
+				&lt;div>your content&lt;/div>
+				&lt;div>your content&lt;/div>
+				&lt;div>your content&lt;/div>
+			&lt;/ap-slider>
+
+			&lt;script type="text/javascript" src="./apslider/apslider.min.js">&lt;/script>
+		&lt;/body>
+		&lt;/html>
+		</code></pre>
+
+		<hr class="hr-line">
+
+		<h2>Settings</h2>
+		<p class="property">accessibility</p>
+		<p class="type">boolean</p>
+		<p class="default">true</p>
+		<p>Enables tabbing and arrow key navigation.</p>
+
+		<hr class="hr-line">
+		
+		<p class="property">adaptiveHeight</p>
+		<p class="type">boolean</p>
+		<p class="default">false</p>
+		<p>Enables adaptive height for single slide horizontal carousels.</p>
+
+		<hr class="hr-line">
+
+		<p class="property">autoplay</p>
+		<p class="type">boolean</p>
+		<p class="default">false</p>
+		<p>Enables Autoplay.</p>
+
+		<hr class="hr-line">
+
+		<p class="property">autoplaySpeed</p>
+		<p class="type">int(ms)</p>
+		<p class="default">3000</p>
+		<p>Autoplay Speed in milliseconds.</p>
+
+		<hr class="hr-line">
+
+		<p class="property">arrows</p>
+		<p class="type">boolean</p>
+		<p class="default">true</p>
+		<p>Prev/Next Arrows.</p>
+
+		<hr class="hr-line">
+
+		<p class="property">asNavFor</p>
+		<p class="type">string</p>
+		<p class="default">null</p>
+		<p>Set the slider to be the navigation of other slider (Class or ID Name).</p>
+
+		<hr class="hr-line">
+
+		<p class="property">appendArrows</p>
+		<p class="type">string</p>
+		<p class="default">document.querySelector(element)</p>
+		<p>Change where the navigation arrows are attached (Selector, htmlString, Array, Element).</p>
+
+		<hr class="hr-line">
+
+		<p class="property">appendDots</p>
+		<p class="type">string</p>
+		<p class="default">document.querySelector(element)</p>
+		<p>Change where the navigation dots are attached (Selector, htmlString, Array, Element).</p>
+
+		<hr class="hr-line">
+
+		<p class="property">prevArrow</p>
+		<p class="type">string (html selector) | object (DOM node)</p>
+		<p class="default">&lt;button class="apslider-prev" aria-label="Previous" type="button">Previous&lt;/button></p>
+		<p>Allows you to select a node or customize the HTML for the "Previous" arrow.</p>
+
+		<hr class="hr-line">
+
+		<p class="property">nextArrow</p>
+		<p class="type">string (html selector) | object (DOM node)</p>
+		<p class="default">&lt;button class="apslider-next" aria-label="Next" type="button">Next&lt;/button></p>
+		<p>Allows you to select a node or customize the HTML for the "Next" arrow.</p>
+
+		<hr class="hr-line">
+
+		<p class="property">centerMode</p>
+		<p class="type">boolean</p>
+		<p class="default">false</p>
+		<p>Enables centered view with partial prev/next slides. Use with odd numbered slidesToShow counts.</p>
+
+		<hr class="hr-line">
+
+		<p class="property">centerPadding</p>
+		<p class="type">string</p>
+		<p class="default">'50px'</p>
+		<p>Side padding when in center mode (px or %).</p>
+
+		<hr class="hr-line">
+
+		<p class="property">cssEase</p>
+		<p class="type">string</p>
+		<p class="default">'ease'</p>
+		<p>CSS3 Animation Easing.</p>
+
+		<hr class="hr-line">
+
+		<p class="property">customPaging</p>
+		<p class="type">function</p>
+		<p class="default">n/a</p>
+		<p>Custom paging templates. See source for use example.</p>
+
+		<hr class="hr-line">
+
+		<p class="property">dots</p>
+		<p class="type">boolean</p>
+		<p class="default">false</p>
+		<p>Show dot indicators.</p>
+
+		<hr class="hr-line">
+
+		<p class="property">dotsClass</p>
+		<p class="type">string</p>
+		<p class="default">'apslider-dots'</p>
+		<p>Class for slide indicator dots container.</p>
+
+		<hr class="hr-line">
+
+		<p class="property">draggable</p>
+		<p class="type">boolean</p>
+		<p class="default">true</p>
+		<p>Enable mouse dragging.</p>
+
+		<hr class="hr-line">
+
+		<p class="property">fade</p>
+		<p class="type">boolean</p>
+		<p class="default">false</p>
+		<p>Enable fade.</p>
+
+		<hr class="hr-line">
+
+		<p class="property">focusOnSelect</p>
+		<p class="type">boolean</p>
+		<p class="default">false</p>
+		<p>Enable focus on selected element (click).</p>
+
+		<hr class="hr-line">
+
+		<p class="property">easing</p>
+		<p class="type">string</p>
+		<p class="default">'linear'</p>
+		<p>Add easing for jQuery animate. Use with easing libraries or default easing methods.</p>
+
+		<hr class="hr-line">
+
+		<p class="property">edgeFriction</p>
+		<p class="type">integer</p>
+		<p class="default">0.15</p>
+		<p>Resistance when swiping edges of non-infinite carousels.</p>
+
+		<hr class="hr-line">
+
+		<p class="property">infinite</p>
+		<p class="type">boolean</p>
+		<p class="default">true</p>
+		<p>Infinite loop sliding.</p>
+
+		<hr class="hr-line">
+
+		<p class="property">initialSlide</p>
+		<p class="type">integer</p>
+		<p class="default">0</p>
+		<p>Slide to start on.</p>
+
+		<hr class="hr-line">
+
+		<p class="property">lazyLoad</p>
+		<p class="type">string</p>
+		<p class="default">'ondemand'</p>
+		<p>Set lazy loading technique. Accepts 'ondemand' or 'progressive'.</p>
+
+		<hr class="hr-line">
+
+		<p class="property">mobileFirst</p>
+		<p class="type">boolean</p>
+		<p class="default">false</p>
+		<p>Responsive settings use mobile first calculation.</p>
+
+		<hr class="hr-line">
+
+		<p class="property">pauseOnFocus</p>
+		<p class="type">boolean</p>
+		<p class="default">true</p>
+		<p>Pause Autoplay On Focus.</p>
+
+		<hr class="hr-line">
+
+		<p class="property">pauseOnHover</p>
+		<p class="type">boolean</p>
+		<p class="default">true</p>
+		<p>Pause Autoplay On Hover.</p>
+
+		<hr class="hr-line">
+
+		<p class="property">pauseOnDotsHover</p>
+		<p class="type">boolean</p>
+		<p class="default">false</p>
+		<p>Pause Autoplay when a dot is hovered.</p>
+
+		<hr class="hr-line">
+
+		<p class="property">respondTo</p>
+		<p class="type">string</p>
+		<p class="default">'window'</p>
+		<p>Width that responsive object responds to. Can be 'window', 'slider' or 'min' (the smaller of the two).</p>
+
+		<hr class="hr-line">
+
+		<p class="property">responsive</p>
+		<p class="type">object</p>
+		<p class="default">none</p>
+		<p>Object containing breakpoints and settings objects (see demo). Enables settings sets at given screen width. Set settings to "destroyed" instead of an object to disable apslider at a given breakpoint.</p>
+
+		<hr class="hr-line">
+
+		<p class="property">rows</p>
+		<p class="type">int</p>
+		<p class="default">1</p>
+		<p>Setting this to more than 1 initializes grid mode. Use slidesPerRow to set how many slides should be in each row.</p>
+
+		<hr class="hr-line">
+
+		<p class="property">slide</p>
+		<p class="type">element</p>
+		<p class="default">''</p>
+		<p>Element query to use as slide.</p>
+
+		<hr class="hr-line">
+
+		<p class="property">slidesPerRow</p>
+		<p class="type">int</p>
+		<p class="default">1</p>
+		<p>With grid mode intialized via the rows option, this sets how many slides are in each grid row.</p>
+
+		<hr class="hr-line">
+
+		<p class="property">slidesToShow</p>
+		<p class="type">int</p>
+		<p class="default">1</p>
+		<p># of slides to show.</p>
+
+		<hr class="hr-line">
+
+		<p class="property">slidesToScroll</p>
+		<p class="type">int</p>
+		<p class="default">1</p>
+		<p># of slides to scroll.</p>
+
+		<hr class="hr-line">
+
+		<p class="property">speed</p>
+		<p class="type">int(ms)</p>
+		<p class="default">300</p>
+		<p>Slide/Fade animation speed.</p>
+
+		<hr class="hr-line">
+
+		<p class="property">swipe</p>
+		<p class="type">boolean</p>
+		<p class="default">true</p>
+		<p>Enable swiping.</p>
+
+		<hr class="hr-line">
+
+		<p class="property">swipeToSlide</p>
+		<p class="type">boolean</p>
+		<p class="default">false</p>
+		<p>Allow users to drag or swipe directly to a slide irrespective of slidesToScroll.</p>
+
+		<hr class="hr-line">
+
+		<p class="property">touchMove</p>
+		<p class="type">boolean</p>
+		<p class="default">true</p>
+		<p>Enable slide motion with touch.</p>
+
+		<hr class="hr-line">
+
+		<p class="property">touchThreshold</p>
+		<p class="type">int</p>
+		<p class="default">5</p>
+		<p>To advance slides, the user must swipe a length of (1/touchThreshold) * the width of the slider.</p>
+
+		<hr class="hr-line">
+
+		<p class="property">variableWidth</p>
+		<p class="type">boolean</p>
+		<p class="default">false</p>
+		<p>Variable width slides.</p>
+
+		<hr class="hr-line">
+
+		<p class="property">vertical</p>
+		<p class="type">boolean</p>
+		<p class="default">false</p>
+		<p>Vertical slide mode.</p>
+
+		<hr class="hr-line">
+
+		<p class="property">verticalSwiping</p>
+		<p class="type">boolean</p>
+		<p class="default">false</p>
+		<p>Vertical swipe mode.</p>
+
+		<hr class="hr-line">
+
+		<p class="property">rtl</p>
+		<p class="type">boolean</p>
+		<p class="default">false</p>
+		<p>Change the slider's direction to become right-to-left.</p>
+
+		<hr class="hr-line">
+
+		<p class="property">waitForAnimate</p>
+		<p class="type">boolean</p>
+		<p class="default">true</p>
+		<p>Ignores requests to advance the slide while animating.</p>
+
+		<hr class="hr-line">
+		
+		<p class="property">zIndex</p>
+		<p class="type">number</p>
+		<p class="default">1000</p>
+		<p>Set the zIndex values for slides, useful for IE9 and lower.</p>
+
+		<hr class="hr-line">
+
+		<h2>Events</h2>
+		<p>Each of the event will have `event.detail` object. This `event.detail` object will have values from respective events. In below example, we can see that the `event.detail` has been destructured so in the callback function we can call it directly with it's name.</p>
+
+		<pre class="code-display"><code class="language-js">
+		const carousel = document.querySelector('.your-element');
+
+		// On swipe event
+		carousel.addEventListener('swipe', ({ detail: { apslider, direction } }) => {
+			console.log(direction);
+			// Output: left
+		});
+		
+		// On edge hit
+		carousel.addEventListener('edge', ({ detail: { apslider, direction } }) => {
+			console.log('edge was hit')
+		});
+		
+		// On before slide change
+		carousel.addEventListener('beforeChange', ({ detail: { apslider, currentSlide, nextSlide } }) => {
+			console.log(nextSlide);
+		});
+		</code></pre>
+
+		<hr class="hr-line">
+		
+		<p class="property">afterChange</p>
+		<p class="argument">{ detail: { apslider, currentSlide } }</p>
+		<p>Fires after slide change.</p>
+
+		<hr class="hr-line">
+		
+		<p class="property">beforeChange</p>
+		<p class="argument">{ detail: { apslider, currentSlide, nextSlide } }</p>
+		<p>Fires after slide change.</p>
+
+		<hr class="hr-line">
+		
+		<p class="property">breakpoint</p>
+		<p class="argument">{ detail: { apslider, breakpoint } }</p>
+		<p>Fires after a breakpoint is hit.</p>
+
+		<hr class="hr-line">
+		
+		<p class="property">destroyed</p>
+		<p class="argument">{ detail: { apslider } }</p>
+		<p>When slider is destroyed.</p>
+
+		<hr class="hr-line">
+		
+		<p class="property">edge</p>
+		<p class="argument">{ detail: { apslider, direction } }</p>
+		<p>Fires when an edge is overscrolled in non-infinite mode.</p>
+
+		<hr class="hr-line">
+		
+		<p class="property">init</p>
+		<p class="argument">{ detail: { apslider } }</p>
+		<p>Fires after first initialization.</p>
+
+		<hr class="hr-line">
+		
+		<p class="property">reInit</p>
+		<p class="argument">{ detail: { apslider } }</p>
+		<p>Fires after every re-initialization.</p>
+
+		<hr class="hr-line">
+		
+		<p class="property">setPosition</p>
+		<p class="argument">{ detail: { apslider } }</p>
+		<p>Fires after position/size changes.</p>
+
+		<hr class="hr-line">
+		
+		<p class="property">swipe</p>
+		<p class="argument">{ detail: { apslider, direction } }</p>
+		<p>Fires after swipe/drag.</p>
+
+		<hr class="hr-line">
+		
+		<p class="property">lazyLoaded</p>
+		<p class="argument">{ detail: { apslider, image, imageSource } }</p>
+		<p>Fires after image loads lazily.</p>
+
+		<hr class="hr-line">
+		
+		<p class="property">lazyLoadError</p>
+		<p class="argument">{ detail: { apslider, image, imageSource } }</p>
+		<p>Fires after image fails to load.</p>
+
+		<hr class="hr-line">
+
+		<h2>Methods</h2>
+		<p>Methods are called on apslider instances through the apslider's method itself, see below:</p>
+
+		<pre class="code-display"><code class="language-js">
+		const carousel = document.querySelector('.your-element');
+
+		// Add a slide
+		carousel.addSlide("&lt;div>COTNENT&lt;/div>");
+		
+		// Get the current slide
+		const currentSlide = carousel.getCurrentSlide();
+
+		// Manually refresh positioning of carousel
+		carousel.setPosition();
+		</code></pre>
+
+		<hr class="hr-line">
+		
+		<p class="property">getCurrentSlide</p>
+		<p class="argument">none</p>
+		<p>Returns the current slide index.</p>
+
+		<hr class="hr-line">
+		
+		<p class="property">goTo</p>
+		<p class="argument">int: slide number, boolean: dont animate</p>
+		<p>Navigates to a slide by index.</p>
+
+		<hr class="hr-line">
+		
+		<p class="property">next</p>
+		<p class="argument">none</p>
+		<p>Navigates to the next slide.</p>
+
+		<hr class="hr-line">
+		
+		<p class="property">prev</p>
+		<p class="argument">none</p>
+		<p>Navigates to the previous slide.</p>
+
+		<hr class="hr-line">
+		
+		<p class="property">pause</p>
+		<p class="argument">none</p>
+		<p>Pauses autoplay.</p>
+
+		<hr class="hr-line">
+		
+		<p class="property">play</p>
+		<p class="argument">none</p>
+		<p>Starts autoplay.</p>
+
+		<hr class="hr-line">
+		
+		<p class="property">addSlide</p>
+		<p class="argument">html or DOM object, index, addBefore</p>
+		<p>Add a slide. If an index is provided, will add at that index, or before if addBefore is set. If no index is provided, add to the end or to the beginning if addBefore is set. Accepts HTML String || Object.</p>
+
+		<hr class="hr-line">
+		
+		<p class="property">removeSlide</p>
+		<p class="argument">index, removeBefore</p>
+		<p>Remove slide by index. If removeBefore is set true, remove slide preceding index, or the first slide if no index is specified. If removeBefore is set to false, remove the slide following index, or the last slide if no index is set.</p>
+
+		<hr class="hr-line">
+		
+		<p class="property">filterSlides</p>
+		<p class="argument">HTML Selector</p>
+		<p>Filters slides using DOM selector (ex: :odd, :even, className of DOM elements).</p>
+
+		<hr class="hr-line">
+		
+		<p class="property">unFilterSlides</p>
+		<p class="argument">None</p>
+		<p>Removes applied filtering.</p>
+
+		<hr class="hr-line">
+		
+		<p class="property">getOption</p>
+		<p class="argument">option: string</p>
+		<p>Gets an individual option value.</p>
+
+		<hr class="hr-line">
+		
+		<p class="property">setOption</p>
+		<p class="argument">option: string, value: depends on option, refresh: boolean</p>
+		<p>Sets an individual value live. Set refresh to true if it's a UI update.</p>
+
+		<hr class="hr-line">
+		
+		<p class="property">destroy</p>
+		<p class="argument">none</p>
+		<p>Deconstructs apslider.</p>
+
+		<hr class="hr-line">
+		
+		<p class="property">getAPSlider</p>
+		<p class="argument">none</p>
+		<p>Get apslider Object.</p>
+
+		<hr class="hr-line">
+	</div>
+
+<script src="./apslider.js"></script>
+<script src="./prism.js"></script>
+<script>
+	const carouselElement = document.querySelector('.settings-from-js');
+	const carouselAddRemove = document.querySelector('.add-remove');
+	const carouselFilter = document.querySelector('.js-filter');
+	const carouselReInit = document.querySelector('.destroy-init');
+	const buttons = document.querySelectorAll('button');
+
+	carouselElement.settings = {
+		slidesToShow: 4,
+		slidesToScroll: 4
+	}
+	carouselElement.reinit(true);
+
+	let slideIndex = 1;
+
+	buttons.forEach(button => {
+		button.addEventListener('click', (e) => {
+			if (e.target.classList.contains('add')) {
+				slideIndex++;
+				const el = document.createElement('p');
+				el.innerText = slideIndex;
+				carouselAddRemove.addSlide(el);
+			}
+			if (e.target.classList.contains('remove')) {
+				carouselAddRemove.removeSlide(slideIndex - 1);
+				if (slideIndex !== 0) slideIndex--;
+			}
+			if (e.target.classList.contains('filter')) {
+				carouselFilter.filterSlides(':odd');
+			}
+			if (e.target.classList.contains('unfilter')) {
+				carouselFilter.unFilterSlides();
+			}
+			if (e.target.classList.contains('init')) {
+				carouselReInit.init();
+			}
+			if (e.target.classList.contains('destroy')) {
+				carouselReInit.destroy(true);
+			}
+		});
+	});
+
+	carouselAddRemove.addEventListener('beforeChange', ({ detail: { apslider, currentSlide, nextSlide } }) => {
+		console.log({ apslider, currentSlide, nextSlide });
+	});
+	carouselAddRemove.addEventListener('afterChange', ({ detail: { apslider, currentSlide } }) => {
+		console.log({ apslider, currentSlide });
+	});
+</script>
+</body>
+</html>
