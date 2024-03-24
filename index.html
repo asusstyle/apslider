@@ -9,7 +9,17 @@
 </head>
 <body>
 	<div class="main-content">
-		<h1>Features &amp; Benefits</h1>
+		<nav class="navigation--wrapper">
+			<ul class="navigation">
+				<li><a href="#features">Features & Benefits</a></li>
+				<li><a href="#started">Getting Started</a></li>
+				<li><a href="#settings">Settings</a></li>
+				<li><a href="#events">Events</a></li>
+				<li><a href="#methods">Methods</a></li>
+				<li><a href="#download">Download</a></li>
+			</ul>
+		</nav>
+		<h1 id="features">Features &amp; Benefits</h1>
 		<div class="features">
 			<ul>
 				<li>Vanilla Javascript based carousel/ slider.</li>
@@ -29,7 +39,7 @@
 			</ul>
 		</div>
 		
-		<h2>Single Item</h2>
+		<h3>Single Item</h3>
 		<ap-slider>
 			<p>1</p>
 			<p>2</p>
@@ -47,7 +57,7 @@
 
 		<hr class="hr-line">
 
-		<h2>Multiple Item</h2>
+		<h3>Multiple Item</h3>
 		<ap-slider data-apslider='{"draggable": true, "infinite": true, "slidesToShow": 3, "slidesToScroll": 3}'>
 			<p>1</p>
 			<p>2</p>
@@ -75,7 +85,7 @@
 
 		<hr class="hr-line">
 
-		<h2>Rsponsive Display</h2>
+		<h3>Rsponsive Display</h3>
 		<ap-slider data-apslider='{"speed": 300, "slidesToShow": 4, "slidesToScroll": 4, "responsive": [{ "breakpoint": 1024, "settings": { "slidesToShow": 3, "slidesToScroll": 3, "infinite": true } }, { "breakpoint": 600, "settings": { "slidesToShow": 2, "slidesToScroll": 2 } }, { "breakpoint": 480, "settings": { "slidesToShow": 1, "slidesToScroll": 1 } } ]}'>
 			<p>1</p>
 			<p>2</p>
@@ -133,7 +143,7 @@
 
 		<hr class="hr-line">
 
-		<h2>Variable Width</h2>
+		<h3>Variable Width</h3>
 		<ap-slider class="variable-width" data-apslider='{"dots": true, "infinite": true, "speed": 300, "slidesToShow": 1, "centerMode": true, "variableWidth": true}'>
 			<div style="width: 200px;">
 				<p>200</p>
@@ -180,7 +190,7 @@
 
 		<hr class="hr-line">
 
-		<h2>Adaptive Height</h2>
+		<h3>Adaptive Height</h3>
 		<ap-slider data-apslider='{"dots": true, "infinite": true, "speed": 300, "slidesToShow": 1, "adaptiveHeight": true}'>
 			<div>
 				<h3>1</h3>
@@ -225,7 +235,7 @@
 
 		<hr class="hr-line">
 
-		<h2>Settings Options w/Javascript</h2>
+		<h3>Settings Options w/Javascript</h3>
 		<ap-slider class="settings-from-js">
 			<p>1</p>
 			<p>2</p>
@@ -265,7 +275,7 @@
 
 		<hr class="hr-line">
 
-		<h2>Center Mode</h2>
+		<h3>Center Mode</h3>
 		<ap-slider data-apslider='{"infinite": true, "centerMode": true, "slidesToShow": 3}'>
 			<p>1</p>
 			<p>2</p>
@@ -293,7 +303,7 @@
 
 		<hr class="hr-line">
 
-		<h2>Lazy Loading</h2>
+		<h3>Lazy Loading</h3>
 		<ap-slider data-apslider='{"lazyLoad": "ondemand", "slidesToScroll": 2, "slidesToShow": 2}'>
 			<div><img data-lazy="https://picsum.photos/200/100?random=1"></div>
 			<div><img data-lazy="https://picsum.photos/200/100?random=2"></div>
@@ -321,7 +331,7 @@
 
 		<hr class="hr-line">
 
-		<h2>Autoplay</h2>
+		<h3>Autoplay</h3>
 		<ap-slider data-apslider='{"autoplay": true, "autoplaySpeed": 2000, "slidesToScroll": 1, "slidesToShow": 3}'>
 			<p>1</p>
 			<p>2</p>
@@ -349,7 +359,7 @@
 
 		<hr class="hr-line">
 
-		<h2>Fade</h2>
+		<h3>Fade</h3>
 		<ap-slider data-apslider='{"infinite": true, "speed": 500, "fade": true, "cssEase": "linear"}'>
 			<div><img src="https://picsum.photos/200/100?random=1"></div>
 			<div><img src="https://picsum.photos/200/100?random=2"></div>
@@ -369,7 +379,7 @@
 
 		<hr class="hr-line">
 
-		<h2>Add &amp; Remove Slide</h2>
+		<h3>Add &amp; Remove Slide</h3>
 		<ap-slider class="add-remove" data-apslider='{"slidesToScroll": 1, "slidesToShow": 1}'>
 			<p>1</p>
 		</ap-slider>
@@ -399,7 +409,7 @@
 
 		<hr class="hr-line">
 
-		<h2>Filtering</h2>
+		<h3>Filtering</h3>
 		<ap-slider class="js-filter" data-apslider='{"infinite": true, "slidesToScroll": 3, "slidesToShow": 3}'>
 			<p>1</p>
 			<p>2</p>
@@ -431,7 +441,7 @@
 
 		<hr class="hr-line">
 
-		<h2>Destroy</h2>
+		<h3>Destroy</h3>
 		<ap-slider class="destroy-init" data-no-init="true">
 			<p>1</p>
 			<p>2</p>
@@ -464,7 +474,7 @@
 
 		<hr class="hr-line">
 
-		<h2>Slider Syncing</h2>
+		<h3>Slider Syncing</h3>
 		<ap-slider class="syncing slider-for" data-apslider='{"slidesToShow": 1, "slidesToScroll": 1, "arrows": false, "fade": true, "asNavFor": ".slider-nav"}'>
 			<p>1</p>
 			<p>2</p>
@@ -498,7 +508,7 @@
 
 		<hr class="hr-line">
 
-		<h2>Right to Left</h2>
+		<h3>Right to Left</h3>
 		<ap-slider dir="rtl" data-apslider='{"rtl": true}'>
 			<p>1</p>
 			<p>2</p>
@@ -519,11 +529,11 @@
 
 		<hr class="hr-line">
 
-		<!-- <p class="lot-more">and a whole lot more...</p>
+		<p class="lot-more">and a whole lot more...</p>
 
-		<hr class="hr-line">-->
+		<hr class="hr-line">
 
-		<h2>Getting Started</h2>
+		<h2 id="started">Getting Started</h2>
 		<p>Set up your HTML markup.</p>
 		<pre class="code-display"><code class="language-markup">
 		&lt;ap-slider class="YOUR_CLASS">
@@ -571,7 +581,7 @@
 
 		<hr class="hr-line">
 
-		<h2>Settings</h2>
+		<h2 id="settings">Settings</h2>
 		<p class="property">accessibility</p>
 		<p class="type">boolean</p>
 		<p class="default">true</p>
@@ -894,7 +904,7 @@
 
 		<hr class="hr-line">
 
-		<h2>Events</h2>
+		<h2 id="events">Events</h2>
 		<p>Each of the event will have `event.detail` object. This `event.detail` object will have values from respective events. In below example, we can see that the `event.detail` has been destructured so in the callback function we can call it directly with it's name.</p>
 
 		<pre class="code-display"><code class="language-js">
@@ -985,7 +995,7 @@
 
 		<hr class="hr-line">
 
-		<h2>Methods</h2>
+		<h2 id="methods">Methods</h2>
 		<p>Methods are called on apslider instances through the apslider's method itself, see below:</p>
 
 		<pre class="code-display"><code class="language-js">
@@ -1086,9 +1096,15 @@
 		<p>Get apslider Object.</p>
 
 		<hr class="hr-line">
+
+		<h2 id="download">Download</h2>
+
+		<p>APSlider is a lightweight (only 3kb gzipped) carousel plugin with no dependencies and very basic styling. As I do not want to over burdned css for you, so you can do it yourself. It is 100% open source and available on <a href="https://github.com/asusstyle/apslider" target="_blank">Github</a> or <a href="./apslider.zip" target="_blank">download</a> it. Use it with your favourite module bundler or by manually injecting the script into your project.</p>
+
+		<p class="support"><a href="https://www.buymeacoffee.com/ashishpanchal" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png" alt="Buy Me A Coffee"></a></p>
 	</div>
 
-<script src="./apslider.js"></script>
+<script src="./apslider.min.js"></script>
 <script src="./prism.js"></script>
 <script>
 	const carouselElement = document.querySelector('.settings-from-js');
