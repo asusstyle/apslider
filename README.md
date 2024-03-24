@@ -20,5 +20,3 @@ Carousel / Slider - built using vanilla javascript. Library is framework indepen
 
 ## Documentation
 Documentation is available @ [https://apslider.devamish.com/](https://apslider.devamish.com/)
-
-[Support Me](https://www.buymeacoffee.com/ashishpanchal)
