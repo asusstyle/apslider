@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>APSlider Documentation</title>
-	<link rel="stylesheet" href="./apslider.css">
-	<link rel="stylesheet" href="./prism.css">
+	<link rel="stylesheet" href="./apslider/apslider.css" />
+	<link rel="stylesheet" href="./styles.css" />
+	<link rel="stylesheet" href="./prism.css" />
+	<meta name="keywords" content="html, css, javascript, slider, carousel, vanilla javascript, javascript, plugin, es6, web component" />
+	<meta name="description" content="Carousel / Slider - built using vanilla javascript. Library is framework independent and can be used with any framework/ platform" />
+	<meta name="robots" content="index, follow" />
+	<meta name="author" content="Ashish Panchal">
+	<meta property="og:title" content="apSlider" />
+	<meta property="og:image" content="apSlider" />
+	<meta property="og:description" content="Carousel / Slider - built using vanilla javascript. Library is framework independent and can be used with any framework/ platform." />
+	<meta property="og:url" content="https://apslider.devamish.com" />
 </head>
 <body>
 	<div class="main-content">
 		<nav class="navigation--wrapper">
+			<h1 class="logo">apSlider</h2>
 			<ul class="navigation">
 				<li><a href="#features">Features & Benefits</a></li>
 				<li><a href="#started">Getting Started</a></li>
@@ -19,7 +29,7 @@
 				<li><a href="#download">Download</a></li>
 			</ul>
 		</nav>
-		<h1 id="features">Features &amp; Benefits</h1>
+		<h2 id="features">Features &amp; Benefits</h2>
 		<div class="features">
 			<ul>
 				<li>Vanilla Javascript based carousel/ slider.</li>
@@ -41,17 +51,39 @@
 		
 		<h3>Single Item</h3>
 		<ap-slider>
-			<p>1</p>
-			<p>2</p>
-			<p>3</p>
-			<p>4</p>
+			<div>
+				<p>1</p>
+			</div>
+			<div>
+				<p>2</p>
+			</div>
+			<div>
+				<p>3</p>
+			</div>
+			<div>
+				<p>4</p>
+			</div>
+			<div>
+				<p>5</p>
+			</div>
 		</ap-slider>
 		<pre class="code-display"><code class="language-markup">
 		&lt;ap-slider>
-			&lt;p>1&lt;/p>
-			&lt;p>2&lt;/p>
-			&lt;p>3&lt;/p>
-			&lt;p>4&lt;/p>
+			&lt;div>
+				&lt;p>1&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>2&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>3&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>4&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>5&lt;/p>
+			&lt;/div>
 		&lt;/ap-slider>
 		</code></pre>
 
@@ -59,27 +91,63 @@
 
 		<h3>Multiple Item</h3>
 		<ap-slider data-apslider='{"draggable": true, "infinite": true, "slidesToShow": 3, "slidesToScroll": 3}'>
-			<p>1</p>
-			<p>2</p>
-			<p>3</p>
-			<p>4</p>
-			<p>5</p>
-			<p>6</p>
-			<p>7</p>
-			<p>8</p>
-			<p>9</p>
+			<div>
+				<p>1</p>
+			</div>
+			<div>
+				<p>2</p>
+			</div>
+			<div>
+				<p>3</p>
+			</div>
+			<div>
+				<p>4</p>
+			</div>
+			<div>
+				<p>5</p>
+			</div>
+			<div>
+				<p>6</p>
+			</div>
+			<div>
+				<p>7</p>
+			</div>
+			<div>
+				<p>8</p>
+			</div>
+			<div>
+				<p>9</p>
+			</div>
 		</ap-slider>
 		<pre class="code-display"><code class="language-markup">
 		&lt;ap-slider data-apslider='{"draggable": true, "infinite": true, "slidesToShow": 3, "slidesToScroll": 3}'>
-			&lt;p>1&lt;/p>
-			&lt;p>2&lt;/p>
-			&lt;p>3&lt;/p>
-			&lt;p>4&lt;/p>
-			&lt;p>5&lt;/p>
-			&lt;p>6&lt;/p>
-			&lt;p>7&lt;/p>
-			&lt;p>8&lt;/p>
-			&lt;p>9&lt;/p>
+			&lt;div>
+				&lt;p>1&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>2&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>3&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>4&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>5&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>6&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>7&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>8&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>9&lt;/p>
+			&lt;/div>
 		&lt;/ap-slider>
 		</code></pre>
 
@@ -87,14 +155,30 @@
 
 		<h3>Rsponsive Display</h3>
 		<ap-slider data-apslider='{"speed": 300, "slidesToShow": 4, "slidesToScroll": 4, "responsive": [{ "breakpoint": 1024, "settings": { "slidesToShow": 3, "slidesToScroll": 3, "infinite": true } }, { "breakpoint": 600, "settings": { "slidesToShow": 2, "slidesToScroll": 2 } }, { "breakpoint": 480, "settings": { "slidesToShow": 1, "slidesToScroll": 1 } } ]}'>
-			<p>1</p>
-			<p>2</p>
-			<p>3</p>
-			<p>4</p>
-			<p>5</p>
-			<p>6</p>
-			<p>7</p>
-			<p>8</p>
+			<div>
+				<p>1</p>
+			</div>
+			<div>
+				<p>2</p>
+			</div>
+			<div>
+				<p>3</p>
+			</div>
+			<div>
+				<p>4</p>
+			</div>
+			<div>
+				<p>5</p>
+			</div>
+			<div>
+				<p>6</p>
+			</div>
+			<div>
+				<p>7</p>
+			</div>
+			<div>
+				<p>8</p>
+			</div>
 		</ap-slider>
 		<pre class="code-display"><code class="language-markup">
 		&lt;!-- 
@@ -130,14 +214,30 @@
 					}
 				}]
 			}'>
-			&lt;p>1&lt;/p>
-			&lt;p>2&lt;/p>
-			&lt;p>3&lt;/p>
-			&lt;p>4&lt;/p>
-			&lt;p>5&lt;/p>
-			&lt;p>6&lt;/p>
-			&lt;p>7&lt;/p>
-			&lt;p>8&lt;/p>
+			&lt;div>
+				&lt;p>1&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>2&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>3&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>4&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>5&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>6&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>7&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>8&lt;/p>
+			&lt;/div>
 		&lt;/ap-slider>
 		</code></pre>
 
@@ -237,28 +337,64 @@
 
 		<h3>Settings Options w/Javascript</h3>
 		<ap-slider class="settings-from-js">
-			<p>1</p>
-			<p>2</p>
-			<p>3</p>
-			<p>4</p>
-			<p>5</p>
-			<p>6</p>
-			<p>7</p>
-			<p>8</p>
-			<p>9</p>
+			<div>
+				<p>1</p>
+			</div>
+			<div>
+				<p>2</p>
+			</div>
+			<div>
+				<p>3</p>
+			</div>
+			<div>
+				<p>4</p>
+			</div>
+			<div>
+				<p>5</p>
+			</div>
+			<div>
+				<p>6</p>
+			</div>
+			<div>
+				<p>7</p>
+			</div>
+			<div>
+				<p>8</p>
+			</div>
+			<div>
+				<p>9</p>
+			</div>
 		</ap-slider>
 		<pre class="code-display"><code class="language-markup">
 		&lt;!-- HTML Structure --&gt;
 		&lt;ap-slider class="settings-from-js">
-			&lt;p>1&lt;/p>
-			&lt;p>2&lt;/p>
-			&lt;p>3&lt;/p>
-			&lt;p>4&lt;/p>
-			&lt;p>5&lt;/p>
-			&lt;p>6&lt;/p>
-			&lt;p>7&lt;/p>
-			&lt;p>8&lt;/p>
-			&lt;p>9&lt;/p>
+			&lt;div>
+				&lt;p>1&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>2&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>3&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>4&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>5&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>6&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>7&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>8&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>9&lt;/p>
+			&lt;/div>
 		&lt;/ap-slider>
 		</code></pre>
 		<pre class="code-display"><code class="language-js">
@@ -277,27 +413,63 @@
 
 		<h3>Center Mode</h3>
 		<ap-slider data-apslider='{"infinite": true, "centerMode": true, "slidesToShow": 3}'>
-			<p>1</p>
-			<p>2</p>
-			<p>3</p>
-			<p>4</p>
-			<p>5</p>
-			<p>6</p>
-			<p>7</p>
-			<p>8</p>
-			<p>9</p>
+			<div>
+				<p>1</p>
+			</div>
+			<div>
+				<p>2</p>
+			</div>
+			<div>
+				<p>3</p>
+			</div>
+			<div>
+				<p>4</p>
+			</div>
+			<div>
+				<p>5</p>
+			</div>
+			<div>
+				<p>6</p>
+			</div>
+			<div>
+				<p>7</p>
+			</div>
+			<div>
+				<p>8</p>
+			</div>
+			<div>
+				<p>9</p>
+			</div>
 		</ap-slider>
 		<pre class="code-display"><code class="language-markup">
 		&lt;ap-slider data-apslider='{"infinite": true, "centerMode": true, "slidesToShow": 3}'>
-			&lt;p>1&lt;/p>
-			&lt;p>2&lt;/p>
-			&lt;p>3&lt;/p>
-			&lt;p>4&lt;/p>
-			&lt;p>5&lt;/p>
-			&lt;p>6&lt;/p>
-			&lt;p>7&lt;/p>
-			&lt;p>8&lt;/p>
-			&lt;p>9&lt;/p>
+			&lt;div>
+				&lt;p>1&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>2&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>3&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>4&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>5&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>6&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>7&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>8&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>9&lt;/p>
+			&lt;/div>
 		&lt;/ap-slider>
 		</code></pre>
 
@@ -332,28 +504,46 @@
 		<hr class="hr-line">
 
 		<h3>Autoplay</h3>
-		<ap-slider data-apslider='{"autoplay": true, "autoplaySpeed": 2000, "slidesToScroll": 1, "slidesToShow": 3}'>
-			<p>1</p>
-			<p>2</p>
-			<p>3</p>
-			<p>4</p>
-			<p>5</p>
-			<p>6</p>
-			<p>7</p>
-			<p>8</p>
-			<p>9</p>
+		<ap-slider data-apslider='{"infinite": true, "autoplay": true, "autoplaySpeed": 2000, "slidesToScroll": 1, "slidesToShow": 3}'>
+			<div>
+				<p>1</p>
+			</div>
+			<div>
+				<p>2</p>
+			</div>
+			<div>
+				<p>3</p>
+			</div>
+			<div>
+				<p>4</p>
+			</div>
+			<div>
+				<p>5</p>
+			</div>
+			<div>
+				<p>6</p>
+			</div>
 		</ap-slider>
 		<pre class="code-display"><code class="language-markup">
 		&lt;ap-slider data-apslider='{"autoplay": true, "autoplaySpeed": 2000, "slidesToScroll": 1, "slidesToShow": 3}'>
-			&lt;p>1&lt;/p>
-			&lt;p>2&lt;/p>
-			&lt;p>3&lt;/p>
-			&lt;p>4&lt;/p>
-			&lt;p>5&lt;/p>
-			&lt;p>6&lt;/p>
-			&lt;p>7&lt;/p>
-			&lt;p>8&lt;/p>
-			&lt;p>9&lt;/p>
+			&lt;div>
+				&lt;p>1&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>2&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>3&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>4&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>5&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>6&lt;/p>
+			&lt;/div>
 		&lt;/ap-slider>
 		</code></pre>
 
@@ -381,7 +571,9 @@
 
 		<h3>Add &amp; Remove Slide</h3>
 		<ap-slider class="add-remove" data-apslider='{"slidesToScroll": 1, "slidesToShow": 1}'>
-			<p>1</p>
+			<div>
+				<p>1</p>
+			</div>
 		</ap-slider>
 
 		<button class="add">Add slide</button>
@@ -395,9 +587,13 @@
 			button.addEventListener('click', (e) => {
 				if (e.target.classList.contains('add')) {
 					slideIndex++;
+					const elWrapper = document.createElement('div');
 					const el = document.createElement('p');
+
 					el.innerText = slideIndex;
-					carouselAddRemove.addSlide(el);
+					elWrapper.append(el);
+
+					carouselAddRemove.addSlide(elWrapper);
 				}
 				if (e.target.classList.contains('remove')) {
 					carouselAddRemove.removeSlide(slideIndex - 1);
@@ -411,15 +607,33 @@
 
 		<h3>Filtering</h3>
 		<ap-slider class="js-filter" data-apslider='{"infinite": true, "slidesToScroll": 3, "slidesToShow": 3}'>
-			<p>1</p>
-			<p>2</p>
-			<p>3</p>
-			<p>4</p>
-			<p>5</p>
-			<p>6</p>
-			<p>7</p>
-			<p>8</p>
-			<p>9</p>
+			<div>
+				<p>1</p>
+			</div>
+			<div>
+				<p>2</p>
+			</div>
+			<div>
+				<p>3</p>
+			</div>
+			<div>
+				<p>4</p>
+			</div>
+			<div>
+				<p>5</p>
+			</div>
+			<div>
+				<p>6</p>
+			</div>
+			<div>
+				<p>7</p>
+			</div>
+			<div>
+				<p>8</p>
+			</div>
+			<div>
+				<p>9</p>
+			</div>
 		</ap-slider>
 		<button class="filter">Filter Slides</button>
 		<button class="unfilter">Unfilter Slides</button>
@@ -443,17 +657,29 @@
 
 		<h3>Destroy</h3>
 		<ap-slider class="destroy-init" data-no-init="true">
-			<p>1</p>
-			<p>2</p>
-			<p>3</p>
+			<div>
+				<p>1</p>
+			</div>
+			<div>
+				<p>2</p>
+			</div>
+			<div>
+				<p>3</p>
+			</div>
 		</ap-slider>
 		<button class="init">Initialize</button>
 		<button class="destroy">Destroy</button>
 		<pre class="code-display"><code class="language-markup">
 		&lt;ap-slider class="destroy-init" data-no-init="true">
-			&lt;p>1&lt;/p>
-			&lt;p>2&lt;/p>
-			&lt;p>3&lt;/p>
+			&lt;div>
+				&lt;p>1&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>2&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>3&lt;/p>
+			&lt;/div>
 		&lt;/ap-slider>
 		</code></pre>
 		<pre class="code-display"><code class="language-js">
@@ -476,33 +702,73 @@
 
 		<h3>Slider Syncing</h3>
 		<ap-slider class="syncing slider-for" data-apslider='{"slidesToShow": 1, "slidesToScroll": 1, "arrows": false, "fade": true, "asNavFor": ".slider-nav"}'>
-			<p>1</p>
-			<p>2</p>
-			<p>3</p>
-			<p>4</p>
-			<p>5</p>
+			<div>
+				<p>1</p>
+			</div>
+			<div>
+				<p>2</p>
+			</div>
+			<div>
+				<p>3</p>
+			</div>
+			<div>
+				<p>4</p>
+			</div>
+			<div>
+				<p>5</p>
+			</div>
 		</ap-slider>
 		<ap-slider class="syncing slider-nav" data-apslider='{"infinite": true, "slidesToShow": 3,  "slidesToScroll": 1, "asNavFor": ".slider-for", "dots": true, "centerMode": true, "focusOnSelect": true}'>
-			<p>1</p>
-			<p>2</p>
-			<p>3</p>
-			<p>4</p>
-			<p>5</p>
+			<div>
+				<p>1</p>
+			</div>
+			<div>
+				<p>2</p>
+			</div>
+			<div>
+				<p>3</p>
+			</div>
+			<div>
+				<p>4</p>
+			</div>
+			<div>
+				<p>5</p>
+			</div>
 		</ap-slider>
 		<pre class="code-display"><code class="language-markup">
 		&lt;ap-slider class="syncing slider-for" data-apslider='{"slidesToShow": 1, "slidesToScroll": 1, "arrows": false, "fade": true, "asNavFor": ".slider-nav"}'>
-			&lt;p>1&lt;/p>
-			&lt;p>2&lt;/p>
-			&lt;p>3&lt;/p>
-			&lt;p>4&lt;/p>
-			&lt;p>5&lt;/p>
+			&lt;div>
+				&lt;p>1&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>2&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>3&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>4&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>5&lt;/p>
+			&lt;/div>
 		&lt;/ap-slider>
 		&lt;ap-slider class="syncing slider-nav" data-apslider='{"infinite": true, "slidesToShow": 3,  "slidesToScroll": 1, "asNavFor": ".slider-for", "dots": true, "centerMode": true, "focusOnSelect": true}'>
-			&lt;p>1&lt;/p>
-			&lt;p>2&lt;/p>
-			&lt;p>3&lt;/p>
-			&lt;p>4&lt;/p>
-			&lt;p>5&lt;/p>
+			&lt;div>
+				&lt;p>1&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>2&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>3&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>4&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>5&lt;/p>
+			&lt;/div>
 		&lt;/ap-slider>
 		</code></pre>
 
@@ -510,19 +776,39 @@
 
 		<h3>Right to Left</h3>
 		<ap-slider dir="rtl" data-apslider='{"rtl": true}'>
-			<p>1</p>
-			<p>2</p>
-			<p>3</p>
-			<p>4</p>
-			<p>5</p>
+			<div>
+				<p>1</p>
+			</div>
+			<div>
+				<p>2</p>
+			</div>
+			<div>
+				<p>3</p>
+			</div>
+			<div>
+				<p>4</p>
+			</div>
+			<div>
+				<p>5</p>
+			</div>
 		</ap-slider>
 		<pre class="code-display"><code class="language-markup">
 		&lt;ap-slider dir="rtl" data-apslider='{"rtl": true}'>
-			&lt;p>1&lt;/p>
-			&lt;p>2&lt;/p>
-			&lt;p>3&lt;/p>
-			&lt;p>4&lt;/p>
-			&lt;p>5&lt;/p>
+			&lt;div>
+				&lt;p>1&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>2&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>3&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>4&lt;/p>
+			&lt;/div>
+			&lt;div>
+				&lt;p>5&lt;/p>
+			&lt;/div>
 		&lt;/ap-slider>
 		</code></pre>
 		<p class="note"><strong>Note:</strong> the HTML tag or the parent of the slider must have the attribute "dir" set to "rtl".</p>
@@ -544,11 +830,14 @@
 			&lt;p>5&lt;/p>
 		&lt;/ap-slider>
 		</code></pre>
-		<p>Move the /uc-caousel folder into your project</p>
+		<p>Move the <code class="language-markup">/apslider</code> folder into your project</p>
 
 		<hr class="hr-line">
 
-		<p>No need to add `css` files as it will add automatically in your <code class="language-markup">&lt;head /&gt;</code></p>
+		<p>Add `css` file to you <code class="language-markup">&lt;head /&gt;</code></p>
+		<pre class="code-display"><code class="language-markup">
+		&lt;link type="text/css" src="./apslider/apslider.css">&lt;/link>
+		</code></pre>
 
 		<hr class="hr-line">
 
@@ -565,6 +854,7 @@
 		&lt;html>
 		&lt;head>
 			&lt;title>Javascript Carousel&lt;/title>
+			&lt;link type="text/css" src="./apslider/apslider.css">&lt;/link>
 		&lt;/head>
 		
 		&lt;body>
@@ -1104,7 +1394,7 @@
 		<p class="support"><a href="https://www.buymeacoffee.com/ashishpanchal" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png" alt="Buy Me A Coffee"></a></p>
 	</div>
 
-<script src="./apslider.min.js"></script>
+<script src="./apslider/apslider.min.js"></script>
 <script src="./prism.js"></script>
 <script>
 	const carouselElement = document.querySelector('.settings-from-js');
@@ -1125,9 +1415,14 @@
 		button.addEventListener('click', (e) => {
 			if (e.target.classList.contains('add')) {
 				slideIndex++;
+
+				const elWrapper = document.createElement('div');
 				const el = document.createElement('p');
+
 				el.innerText = slideIndex;
-				carouselAddRemove.addSlide(el);
+				elWrapper.append(el);
+
+				carouselAddRemove.addSlide(elWrapper);
 			}
 			if (e.target.classList.contains('remove')) {
 				carouselAddRemove.removeSlide(slideIndex - 1);

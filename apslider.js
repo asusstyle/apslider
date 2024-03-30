@@ -15,7 +15,6 @@ class APSlider extends HTMLElement {
         this.animProp = null;
         this.breakpoints = [];
         this.breakpointSettings = [];
-        // this.cssTransitions = false;
         this.focussed = false;
         this.interrupted = false;
         this.hide = 'hidden';
@@ -80,8 +79,6 @@ class APSlider extends HTMLElement {
             swipeToSlide: false,
             touchMove: true,
             touchThreshold: 5,
-            // useCSS: true,
-            // useTransform: true,
             variableWidth: false,
             vertical: false,
             verticalSwiping: false,
@@ -113,7 +110,6 @@ class APSlider extends HTMLElement {
             swiping: false,
             list: null,
             touchObject: {},
-            // transformsEnabled: false,
             destroyed: false
         };
 
@@ -148,8 +144,6 @@ class APSlider extends HTMLElement {
         // Extracted from jQuery v1.11 source
         this.htmlExpr = /^(?:\s*(<[\w\W]+>)[^>]*)$/;
 
-        
-        this.basicStyleAppender();
         this.registerBreakpoints();
 
         if (this.noInit === 'true') return;
@@ -170,7 +164,6 @@ class APSlider extends HTMLElement {
         });
         return fragment.childNodes;
     };
-
 
     /**
      * @method easeInOutQuad
@@ -233,192 +226,6 @@ class APSlider extends HTMLElement {
         Object.keys(styles).forEach((t) => {
             el.style[t] = styles[t];
         });
-    }
-
-    basicStyleAppender = () => {
-        const styleTemplate = document.createElement('style');
-        styleTemplate.id = 'apslider-styles';
-        styleTemplate.innerHTML = `
-            /* Slider */
-            @keyframes l23 {
-                100% {
-                    transform: rotate(1turn)
-                }
-            }
-            ap-slider {
-                display: block;
-                position: relative;
-                overflow: hidden;
-            }
-            ap-slider .apslider-loading .apslider-list {
-                animation: l23 1s infinite steps(12);
-                aspect-ratio: 1;
-                background:
-                    linear-gradient(0deg, rgb(0 0 0/50%) 30%, #0000 0 70%, rgb(0 0 0/100%) 0) 50%/8% 100%,
-                    linear-gradient(90deg, rgb(0 0 0/25%) 30%, #0000 0 70%, rgb(0 0 0/75%) 0) 50%/100% 8%;
-                background-repeat: no-repeat;
-                border-radius: 50%;
-                display: grid;
-                width: 50px;
-            }
-            ap-slider .apslider-loading .apslider-list::before,
-            ap-slider .apslider-loading .apslider-list::after {
-                background: inherit;
-                border-radius: 50%;
-                content: "";
-                grid-area: 1/1;
-                opacity: 0.915;
-                transform: rotate(30deg);
-            }
-            ap-slider .apslider-loading .apslider-list::after {
-                opacity: 0.83;
-                transform: rotate(60deg);
-            }
-            /* Arrows */
-            ap-slider .apslider-arrow {
-                border: none;
-                background: transparent;
-                cursor: pointer;
-                display: block;
-                font-size: 0;
-                height: 15px;
-                line-height: 0;
-                padding: 0;
-                position: absolute;
-                top: calc(50% - var(--dotsHeight)/2);
-                transform: translate(0, -50%);
-                width: 15px;
-                z-index: 10;
-            }
-            ap-slider .apslider-prev {
-                left: 0;
-            }
-            ap-slider[dir='rtl'] .apslider-prev,
-            [dir='rtl'] ap-slider .apslider-prev {
-                right: 0;
-                left: auto;
-            }
-            ap-slider[dir='rtl'] .apslider-next:before,
-            [dir='rtl'] ap-slider .apslider-next:before,
-            ap-slider .apslider-prev:before {
-                content: '←';
-            }
-            ap-slider .apslider-next:before,
-            [dir='rtl'] ap-slider .apslider-prev:before,
-            ap-slider[dir='rtl'] .apslider-prev:before {
-                content: '→';
-            }
-            ap-slider .apslider-next {
-                right: 0;
-            }
-            ap-slider[dir='rtl'] .apslider-next,
-            [dir='rtl'] ap-slider .apslider-next {
-                right: auto;
-                left: 0;
-            }
-            ap-slider .apslider-arrow:focus:before,
-            ap-slider .apslider-arrow:hover:before {
-                opacity: 1;
-            }
-            ap-slider .apslider-arrow.apslider-disabled:before {
-                opacity: .20;
-            }
-            ap-slider .apslider-disabled {
-                pointer-events: none;
-            }
-            ap-slider .apslider-arrow:before {
-                display: block;
-                font-size: 15px;
-                line-height: 1;
-                opacity: .75;
-                -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
-            }
-            /* Dots */
-            ap-slider .apslider-dotted.apslider-slider {
-                margin-bottom: 30px;
-            }
-            ap-slider .apslider-dots {
-                display: block;
-                list-style: none;
-                margin: 0;
-                padding: 0;
-                text-align: center;
-                width: 100%;
-            }
-            ap-slider .apslider-dots li {
-                cursor: pointer;
-                display: inline-block;
-                height: 20px;
-                margin: 0 5px;
-                padding: 0;
-                position: relative;
-                width: 20px;
-            }
-            ap-slider .apslider-dots li button {
-                background-color: transparent;
-                border: 0;
-                color: transparent;
-                cursor: pointer;
-                display: block;
-                font-size: 0;
-                height: 20px;
-                line-height: 0;
-                outline: none;
-                padding: 5px;
-                width: 20px;
-            }
-            ap-slider .apslider-dots li button:hover,
-            ap-slider .apslider-dots li button:focus {
-                outline: none;
-            }
-            ap-slider .apslider-dots li button:hover:before,
-            ap-slider .apslider-dots li button:focus:before {
-                opacity: 1;
-            }
-            ap-slider .apslider-dots li button:before {
-                content: '•';
-                color: black;
-                font-size: 10px;
-                height: 20px;
-                left: 0;
-                line-height: 20px;
-                opacity: .25;
-                position: absolute;
-                text-align: center;
-                top: 0;
-                width: 20px;
-                -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
-            }
-            ap-slider .apslider-dots li.apslider-active button:before {
-                opacity: .75;
-                color: black;
-            }
-            ap-slider .apslider-list {
-                box-sizing: border-box;
-                margin: 0 auto;
-                max-width: calc(100% - 50px);
-                overflow: hidden;
-                position: relative;
-            }
-            ap-slider .apslider-track {
-                display: flex;
-                position: relative;
-            }
-            ap-slider.apslider-adaptive-height .apslider-track {
-                align-items: flex-start;
-            }
-            ap-slider .apslider-track .apslider-slide {
-                flex: 0 0 auto;
-            }
-            ap-slider .apslider-track .apslider-slide img {
-                height: 100%;
-                object-fit: cover;
-                width: 100%;
-            }
-        `;
-        if (!document.head.querySelectorAll('#apslider-styles').length) document.head.insertBefore(styleTemplate, document.head.querySelector('link'));
     }
 
     init = (creation) => {
@@ -1503,32 +1310,23 @@ class APSlider extends HTMLElement {
     fadeSlide = (slideIndex, callback) => {
         const _ = this;
 
-        // if (_.cssTransitions === false) {
-        //     _.slides[slideIndex].style['z-index'] = _.options.zIndex;
-        //     _.animate(_.slides[slideIndex], { opacity: 1 }, _.options.speed, _.options.easing, callback);
-        // } else {
-            _.applyTransition(slideIndex);
-            _.cssAppender(_.slides[slideIndex], { opacity: 1, zIndex: _.options.zIndex });
+        _.applyTransition(slideIndex);
+        _.cssAppender(_.slides[slideIndex], { opacity: 1, zIndex: _.options.zIndex });
 
-            if (callback) {
-                setTimeout(() => {
-                    _.disableTransition(slideIndex);
+        if (callback) {
+            setTimeout(() => {
+                _.disableTransition(slideIndex);
 
-                    callback.call();
-                }, _.options.speed);
-            }
-        // }
+                callback.call();
+            }, _.options.speed);
+        }
     }
 
     fadeSlideOut = (slideIndex) => {
         const _ = this;
 
-        // if (_.cssTransitions === false) {
-        //     _.animate(_.slides[slideIndex], { opacity: 0, zIndex: _.options.zIndex - 2 }, _.options.speed, _.options.easing);
-        // } else {
-            _.applyTransition(slideIndex);
-            _.cssAppender(_.slides[slideIndex], { opacity: 0, zIndex: _.options.zIndex - 2 });
-        // }
+        _.applyTransition(slideIndex);
+        _.cssAppender(_.slides[slideIndex], { opacity: 0, zIndex: _.options.zIndex - 2 });
     }
 
     applyTransition = (slide) => {
@@ -1557,40 +1355,24 @@ class APSlider extends HTMLElement {
         if (_.options.rtl === true && _.options.vertical === false) {
             targetLeft = -targetLeft;
         }
-        // if (_.transformsEnabled === false) {
-        //     if (_.options.vertical === false) {
-        //         _.animate(_.slideTrack, { left: targetLeft }, _.options.speed, _.options.easing, callback);
-        //     } else {
-        //         _.animate(_.slideTrack, { top: targetLeft }, _.options.speed, _.options.easing, callback);
-        //     }
 
-        // } else {
-            // if (_.cssTransitions === false) {
-            //     if (_.options.rtl === true) {
-            //         _.currentLeft = -(_.currentLeft);
-            //     }
+        _.applyTransition();
+        targetLeft = Math.ceil(targetLeft);
 
-            //     _.animate({ animStart: _.currentLeft }, { animStart: targetLeft }, _.options.speed, _.options.easing, callback);
-            // } else {
-                _.applyTransition();
-                targetLeft = Math.ceil(targetLeft);
+        if (_.options.vertical === false) {
+            animProps[_.animType] = 'translate3d(' + targetLeft + 'px, 0px, 0px)';
+        } else {
+            animProps[_.animType] = 'translate3d(0px,' + targetLeft + 'px, 0px)';
+        }
 
-                if (_.options.vertical === false) {
-                    animProps[_.animType] = 'translate3d(' + targetLeft + 'px, 0px, 0px)';
-                } else {
-                    animProps[_.animType] = 'translate3d(0px,' + targetLeft + 'px, 0px)';
-                }
+        _.cssAppender(_.slideTrack, animProps);
 
-                _.cssAppender(_.slideTrack, animProps);
-
-                if (callback) {
-                    setTimeout(() => {
-                        _.disableTransition();
-                        callback.call();
-                    }, _.options.speed);
-                }
-            // }
-        // }
+        if (callback) {
+            setTimeout(() => {
+                _.disableTransition();
+                callback.call();
+            }, _.options.speed);
+        }
     }
 
     keyHandler = (event) => {
@@ -2014,9 +1796,6 @@ class APSlider extends HTMLElement {
         });
 
         window.addEventListener('load', _.setPosition);
-        
-        // TODO:
-        // $(_.setPosition);
     }
 
     orientationChange = () => {
@@ -2333,7 +2112,6 @@ class APSlider extends HTMLElement {
             }
         }
 
-        // TODO:
         if (_.options.lazyLoad === 'ondemand' || _.options.lazyLoad === 'anticipated') {
             _.lazyLoad();
         }
@@ -2470,17 +2248,9 @@ class APSlider extends HTMLElement {
 
         positionProps[_.positionProp] = position;
 
-        // if (_.transformsEnabled === false) {
-        //     _.cssAppender(_.slideTrack, positionProps);
-        // } else {
-            positionProps = {};
-            // if (_.cssTransitions === false) {
-            //     positionProps[_.animType] = 'translate(' + x + ', ' + y + ')';
-            // } else {
-                positionProps[_.animType] = 'translate3d(' + x + ', ' + y + ', 0px)';
-            // }
-            _.cssAppender(_.slideTrack, positionProps);
-        // }
+        positionProps = {};
+        positionProps[_.animType] = 'translate3d(' + x + ', ' + y + ', 0px)';
+        _.cssAppender(_.slideTrack, positionProps);
     }
 
     setFade = () => {
@@ -2625,13 +2395,6 @@ class APSlider extends HTMLElement {
             _.classList.remove('apslider-vertical');
         }
 
-        //NOTE: Disabled non-css transition because as of now each of the css animation properties are supported in all browsers
-        // if (bodyStyle.WebkitTransition !== undefined || bodyStyle.MozTransition !== undefined || bodyStyle.msTransition !== undefined) {
-        //     if (_.options.useCSS === true) {
-        //         _.cssTransitions = true;
-        //     }
-        // }
-
         if (_.options.fade) {
             if (typeof _.options.zIndex === 'number') {
                 if (_.options.zIndex < 3) {
@@ -2642,39 +2405,9 @@ class APSlider extends HTMLElement {
             }
         }
 
-        // if (bodyStyle.OTransform !== undefined) {
-        //     _.animType = 'OTransform';
-        //     _.transformType = '-o-transform';
-        //     _.transitionType = 'OTransition';
-        //     if (bodyStyle.perspectiveProperty === undefined && bodyStyle.webkitPerspective === undefined) _.animType = false;
-        // }
-        // if (bodyStyle.MozTransform !== undefined) {
-        //     _.animType = 'MozTransform';
-        //     _.transformType = '-moz-transform';
-        //     _.transitionType = 'MozTransition';
-        //     if (bodyStyle.perspectiveProperty === undefined && bodyStyle.MozPerspective === undefined) _.animType = false;
-        // }
-        // if (bodyStyle.webkitTransform !== undefined) {
-        //     _.animType = 'webkitTransform';
-        //     _.transformType = '-webkit-transform';
-        //     _.transitionType = 'webkitTransition';
-        //     if (bodyStyle.perspectiveProperty === undefined && bodyStyle.webkitPerspective === undefined) _.animType = false;
-        // }
-        // if (bodyStyle.msTransform !== undefined) {
-        //     _.animType = 'msTransform';
-        //     _.transformType = '-ms-transform';
-        //     _.transitionType = 'msTransition';
-        //     if (bodyStyle.msTransform === undefined) _.animType = false;
-        // }
-        // if (bodyStyle.transform !== undefined && _.animType !== false) {
-        //     _.animType = 'transform';
-        //     _.transformType = 'transform';
-        //     _.transitionType = 'transition';
-        // }
         _.animType = 'transform';
         _.transformType = 'transform';
         _.transitionType = 'transition';
-        // _.transformsEnabled = _.options.useTransform && (_.animType !== null && _.animType !== false);
     }
 
     getDotCount = () => {

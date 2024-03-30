@@ -1,0 +1,198 @@
+@keyframes l23 {
+    100% {
+        transform: rotate(1turn)
+    }
+}
+
+ap-slider {
+    display: block;
+    position: relative;
+    overflow: hidden
+}
+
+ap-slider .apslider-loading .apslider-list {
+    animation: 1s steps(12) infinite l23;
+    aspect-ratio: 1;
+    background: linear-gradient(0deg, rgb(0 0 0/50%) 30%, #0000 0 70%, rgb(0 0 0/100%) 0) 50%/8% 100%, linear-gradient(90deg, rgb(0 0 0/25%) 30%, #0000 0 70%, rgb(0 0 0/75%) 0) 50%/100% 8%;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    display: grid;
+    width: 50px
+}
+
+ap-slider .apslider-loading .apslider-list::after,
+ap-slider .apslider-loading .apslider-list::before {
+    background: inherit;
+    border-radius: 50%;
+    content: "";
+    grid-area: 1/1;
+    opacity: .915;
+    transform: rotate(30deg)
+}
+
+ap-slider .apslider-loading .apslider-list::after {
+    opacity: .83;
+    transform: rotate(60deg)
+}
+
+ap-slider .apslider-arrow {
+    border: none;
+    background: 0 0;
+    cursor: pointer;
+    display: block;
+    font-size: 0;
+    height: 15px;
+    line-height: 0;
+    padding: 0;
+    position: absolute;
+    top: calc(50% - var(--dotsHeight)/ 2);
+    transform: translate(0, -50%);
+    width: 15px;
+    z-index: 10
+}
+
+ap-slider .apslider-prev {
+    left: 0
+}
+
+[dir=rtl] ap-slider .apslider-prev,
+ap-slider[dir=rtl] .apslider-prev {
+    right: 0;
+    left: auto
+}
+
+[dir=rtl] ap-slider .apslider-next:before,
+ap-slider .apslider-prev:before,
+ap-slider[dir=rtl] .apslider-next:before {
+    content: '←'
+}
+
+[dir=rtl] ap-slider .apslider-prev:before,
+ap-slider .apslider-next:before,
+ap-slider[dir=rtl] .apslider-prev:before {
+    content: '→'
+}
+
+ap-slider .apslider-next {
+    right: 0
+}
+
+[dir=rtl] ap-slider .apslider-next,
+ap-slider[dir=rtl] .apslider-next {
+    right: auto;
+    left: 0
+}
+
+ap-slider .apslider-arrow:focus:before,
+ap-slider .apslider-arrow:hover:before,
+ap-slider .apslider-dots li button:focus:before,
+ap-slider .apslider-dots li button:hover:before {
+    opacity: 1
+}
+
+ap-slider .apslider-arrow.apslider-disabled:before {
+    opacity: .2
+}
+
+ap-slider .apslider-disabled {
+    pointer-events: none
+}
+
+ap-slider .apslider-arrow:before {
+    display: block;
+    font-size: 15px;
+    line-height: 1;
+    opacity: .75;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+ap-slider .apslider-dotted.apslider-slider {
+    margin-bottom: 30px
+}
+
+ap-slider .apslider-dots {
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 100%
+}
+
+ap-slider .apslider-dots li {
+    cursor: pointer;
+    display: inline-block;
+    height: 20px;
+    margin: 0 5px;
+    padding: 0;
+    position: relative;
+    width: 20px
+}
+
+ap-slider .apslider-dots li button {
+    background-color: transparent;
+    border: 0;
+    color: transparent;
+    cursor: pointer;
+    display: block;
+    font-size: 0;
+    height: 20px;
+    line-height: 0;
+    outline: 0;
+    padding: 5px;
+    width: 20px
+}
+
+ap-slider .apslider-dots li button:focus,
+ap-slider .apslider-dots li button:hover {
+    outline: 0
+}
+
+ap-slider .apslider-dots li button:before {
+    content: '•';
+    color: #000;
+    font-size: 10px;
+    height: 20px;
+    left: 0;
+    line-height: 20px;
+    opacity: .25;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 20px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+ap-slider .apslider-dots li.apslider-active button:before {
+    opacity: .75;
+    color: #000
+}
+
+ap-slider .apslider-list {
+    box-sizing: border-box;
+    margin: 0 auto;
+    max-width: calc(100% - 50px);
+    overflow: hidden;
+    position: relative
+}
+
+ap-slider .apslider-track {
+    display: flex;
+    position: relative
+}
+
+ap-slider.apslider-adaptive-height .apslider-track {
+    align-items: flex-start
+}
+
+ap-slider .apslider-track .apslider-slide {
+    flex: 0 0 auto
+}
+
+ap-slider .apslider-track .apslider-slide img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%
+}
