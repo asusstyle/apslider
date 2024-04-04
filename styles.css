@@ -3,6 +3,7 @@
 	--snapShot: #2C3E50;
 	--amalfiCost: #2980B9;
 	--gray: #7F8C8D;
+	--white: #ffffff;
 }
 @font-face {
 	font-family: "apSliderBold";
@@ -58,7 +59,7 @@ h3 {
 	border-top: 2px solid var(--snapShot);
 	margin: 0 auto;
 	max-width: 1200px;
-	padding: 0 10px;
+	padding: 0 10px 10px;
 }
 .navigation--wrapper {
 	margin-bottom: 30px;
@@ -120,6 +121,9 @@ ap-slider {
 }
 ap-slider .apslider-slide p {
 	background-color: var(--gray);
+	color: var(--white);
+	font-size: 20px;
+	font-weight: 700;
 	margin: 10px;
 	padding: 40px 10px;
 }
